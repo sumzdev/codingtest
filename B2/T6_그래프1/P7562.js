@@ -1,5 +1,5 @@
 // https://www.acmicpc.net/problem/7562
-// 나이트의 이동 다국어
+// 나이트의 이동
 // 실버 1
 
 const NOT_VISIT = 0;
