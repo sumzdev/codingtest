@@ -2,9 +2,9 @@
 // Two Dots
 // 골드 4
 
-// 그래프 탐색 문제라는 걸 알고 있었지만,
-// DFS, BFS가 아닌 다른 방식으로 풀 수 있는지 궁금했다.
-// 실패 !
+// 문제를 잘못 이해핬다.
+// ㅁ가 아니라 그냥 연결했을 때 선이아닌 도형으로 이루어지기만 하는 것을 확인하는 것이 였다...
+// 문제를 잘 읽어봐야겠다...
 
 const MODE = {
   DOWN: 0,
@@ -25,48 +25,46 @@ function run() {
   for (let i = 0; i < H - 1; i++) {
     for (let j = 0; j < W - 1; j++) {
       if (check({ startI: i, startJ: j })) {
-        console.log("YES");
+        console.log("Yes");
         return;
       }
     }
   }
-  console.log("NO");
+  console.log("No");
 }
 
 function check({ startI, startJ }) {
-  // console.log("####", startI, startJ, "-----");
   let type = board[startI][startJ];
+  // console.log("####", startI, startJ, "-----", type);
 
   let curI = startI;
   let curJ = startJ + 1;
 
-  let targetI = curI;
+  let targetI = curI + 1;
   let targetJ = curJ;
 
   let mode = MODE.DOWN; // 0: down, 1:right
 
   while (curI < H && curJ < W) {
-    // console.log("[", mode === 0 ? "D" : "R", "]", curI, curJ);
+    // console.log(
+    //   "[",
+    //   mode === 0 ? "D" : "R",
+    //   "]",
+    //   curI,
+    //   curJ,
+    //   board[curI][curJ],
+    //   board[curI][curJ] === type
+    // );
 
     if (board[curI][curJ] === type) {
-      if (curI === 0) {
-        mode = MODE.DOWN;
-        curI += 1;
-        continue;
-      } else if (curJ === 0) {
-        mode = MODE.RIGHT;
-        curJ += 1;
-        continue;
-      }
-
       if (mode === MODE.DOWN) {
-        if (curI < targetI) {
+        if (curI < targetI - 1) {
           curI += 1;
         } else {
           // curI === targetI
           mode = MODE.RIGHT;
-          curI = targetI = curI + 1;
-          curJ = 0;
+          curI = targetI;
+          curJ = startJ;
         }
       } else {
         // mode === MODE.RIGHT
@@ -78,7 +76,7 @@ function check({ startI, startJ }) {
         }
       }
     } else {
-      if (curI === 0 || curJ === 0) return false;
+      if (curI === startI || curJ === startJ) return false;
 
       if (mode === MODE.DOWN) {
         curI = 0;
@@ -88,8 +86,9 @@ function check({ startI, startJ }) {
         // mode === MODE.RIGHT
         if (curJ === targetJ) {
           mode = MODE.DOWN;
-          curI = targetI = curI + 1;
+          targetI = curI + 1;
           curJ = targetJ = curJ + 1;
+          curI = startI;
         } else {
           // curJ < targetJ
           curJ = 0;
