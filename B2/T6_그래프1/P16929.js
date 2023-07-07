@@ -63,8 +63,8 @@ function checkCycle({ startI, startJ }) {
 
     cntMove += 1;
 
-    const _Add = makeNextPoints(curI, curJ, curDir);
-    pointsToCheck = [..._Add, ...pointsToCheck];
+    const addPoints = makeNextPoints(curI, curJ, curDir);
+    pointsToCheck = [...addPoints, ...pointsToCheck];
 
     // console.log(
     //   " - [",
@@ -74,7 +74,7 @@ function checkCycle({ startI, startJ }) {
     //   curDir,
     //   board[curI][curJ],
     //   board[curI][curJ] === type,
-    //   _Add
+    //   addPoints
     // );
   }
   return false;
