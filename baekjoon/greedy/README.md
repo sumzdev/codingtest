@@ -32,10 +32,14 @@
 | ⬜️ | 25 | <a href="https://www.acmicpc.net/problem/2812" target="_blank">2812</a> | <a href="https://www.acmicpc.net/problem/2812" target="_blank">크게 만들기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/13.svg"/> | <a href="./../solution/greedy/2812">바로가기</a> |
 | ⬜️ | 26 | <a href="https://www.acmicpc.net/problem/8980" target="_blank">8980</a> | <a href="https://www.acmicpc.net/problem/8980" target="_blank">택배</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/14.svg"/> | |
 
+---
+
 ### 활동 선택 문제 (1)
 
 한 번에 가장 많은 활동을 할 수 있는 경우 고르기
 
+<details>
+<summary>설명</summary>
 | index |  1  |  2  |  3  |  4  |  5  |
 | :---: | :-: | :-: | :-: | :-: | :-: |
 | start |  1  |  2  |  5  |  6  |  8  |
@@ -64,11 +68,18 @@ for (const [startTime, endTime] of sorted) {
 }
 ```
 
+</details>
+
 - 실버1 - 1931 - 회의실 배정
+
+---
 
 ### 활동 선택 문제 (2)
 
 모든 활동을 포함 하는 최소 그룹 개수
+
+<details>
+<summary>설명</summary>
 
 ```javascript
 const timeList = input
@@ -91,5 +102,7 @@ const maxCnt = timeList.reduce(
 );
 console.log(maxCnt[1]);
 ```
+
+</details>
 
 - 골드5 - 11000 - 강의실 배정
