@@ -19,7 +19,7 @@
 | ✅ | 12 | <a href="https://www.acmicpc.net/problem/16953" target="_blank">16953</a> | <a href="https://www.acmicpc.net/problem/16953" target="_blank">A → B</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> | |
 | ✅ | 13 | <a href="https://www.acmicpc.net/problem/21314" target="_blank">21314</a> | <a href="https://www.acmicpc.net/problem/21314" target="_blank">민겸 수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> | |
 | ✅ | 14 | <a href="https://www.acmicpc.net/problem/1931" target="_blank">1931</a> | <a href="https://www.acmicpc.net/problem/1931" target="_blank">회의실 배정</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> | <a href="./../solution/greedy/1931">바로가기</a> |
-| ⬜️ | 15 | <a href="https://www.acmicpc.net/problem/11000" target="_blank">11000</a> | <a href="https://www.acmicpc.net/problem/11000" target="_blank">강의실 배정</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | <a href="./../solution/greedy/11000">바로가기</a> |
+| ✅ | 15 | <a href="https://www.acmicpc.net/problem/11000" target="_blank">11000</a> | <a href="https://www.acmicpc.net/problem/11000" target="_blank">강의실 배정</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | <a href="./../solution/greedy/11000">바로가기</a> |
 | ⬜️ | 16 | <a href="https://www.acmicpc.net/problem/13164" target="_blank">13164</a> | <a href="https://www.acmicpc.net/problem/13164" target="_blank">행복 유치원</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | <a href="./../solution/greedy/13164">바로가기</a> |
 | ⬜️ | 17 | <a href="https://www.acmicpc.net/problem/19598" target="_blank">19598</a> | <a href="https://www.acmicpc.net/problem/19598" target="_blank">최소 회의실 개수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | <a href="./../solution/greedy/19598">바로가기</a> |
 | ⬜️ | 18 | <a href="https://www.acmicpc.net/problem/2212" target="_blank">2212</a> | <a href="https://www.acmicpc.net/problem/2212" target="_blank">센서</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | <a href="./../solution/greedy/2212">바로가기</a> |
@@ -70,29 +70,26 @@ for (const [startTime, endTime] of sorted) {
 
 모든 활동을 포함 하는 최소 그룹 개수
 
-```
-function run({ N, input }) {
-  const timeList = input
-    .flatMap(([s, e]) => [
-      ["s", s],
-      ["e", e],
-    ])
-    .sort(([type1, time1], [type2, time2]) =>
-      time1 !== time2 ? time1 - time2 : type2 - type1
-    )
-    .map(([s, _]) => s);
-  // console.log(timeList);
+```javascript
+const timeList = input
+  .flatMap(([s, e]) => [
+    [1, s],
+    [-1, e],
+  ])
+  .sort(([type1, time1], [type2, time2]) =>
+    time1 !== time2 ? time1 - time2 : type1 - type2
+  )
+  .map(([s, _]) => s);
+// console.log(timeList);
 
-  const maxCnt = timeList.reduce(
-    ([cnt, max], cur) => {
-      const curCnt = cnt + (cur === "s" ? 1 : -1);
-      return [curCnt, Math.max(max, curCnt)];
-    },
-    [0, 0]
-  );
-  console.log(maxCnt[1]);
-}
-
+const maxCnt = timeList.reduce(
+  ([cnt, max], cur) => {
+    const curCnt = cnt + cur;
+    return [curCnt, Math.max(max, curCnt)];
+  },
+  [0, 0]
+);
+console.log(maxCnt[1]);
 ```
 
 - 골드5 - 11000 - 강의실 배정
