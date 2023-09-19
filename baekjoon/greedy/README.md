@@ -18,7 +18,7 @@
 | ✅ | 11 | <a href="https://www.acmicpc.net/problem/1541" target="_blank">1541</a> | <a href="https://www.acmicpc.net/problem/1541" target="_blank">잃어버린 괄호</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> | <a href="./../solution/greedy/1541">바로가기</a> |
 | ✅ | 12 | <a href="https://www.acmicpc.net/problem/16953" target="_blank">16953</a> | <a href="https://www.acmicpc.net/problem/16953" target="_blank">A → B</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> | |
 | ✅ | 13 | <a href="https://www.acmicpc.net/problem/21314" target="_blank">21314</a> | <a href="https://www.acmicpc.net/problem/21314" target="_blank">민겸 수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> | |
-| ⬜️ | 14 | <a href="https://www.acmicpc.net/problem/1931" target="_blank">1931</a> | <a href="https://www.acmicpc.net/problem/1931" target="_blank">회의실 배정</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> | <a href="./../solution/greedy/1931">바로가기</a> |
+| ✅ | 14 | <a href="https://www.acmicpc.net/problem/1931" target="_blank">1931</a> | <a href="https://www.acmicpc.net/problem/1931" target="_blank">회의실 배정</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> | <a href="./../solution/greedy/1931">바로가기</a> |
 | ⬜️ | 15 | <a href="https://www.acmicpc.net/problem/11000" target="_blank">11000</a> | <a href="https://www.acmicpc.net/problem/11000" target="_blank">강의실 배정</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | <a href="./../solution/greedy/11000">바로가기</a> |
 | ⬜️ | 16 | <a href="https://www.acmicpc.net/problem/13164" target="_blank">13164</a> | <a href="https://www.acmicpc.net/problem/13164" target="_blank">행복 유치원</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | <a href="./../solution/greedy/13164">바로가기</a> |
 | ⬜️ | 17 | <a href="https://www.acmicpc.net/problem/19598" target="_blank">19598</a> | <a href="https://www.acmicpc.net/problem/19598" target="_blank">최소 회의실 개수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | <a href="./../solution/greedy/19598">바로가기</a> |
@@ -31,3 +31,68 @@
 | ⬜️ | 24 | <a href="https://www.acmicpc.net/problem/2285" target="_blank">2285</a> | <a href="https://www.acmicpc.net/problem/2285" target="_blank">우체국</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/12.svg"/> | |
 | ⬜️ | 25 | <a href="https://www.acmicpc.net/problem/2812" target="_blank">2812</a> | <a href="https://www.acmicpc.net/problem/2812" target="_blank">크게 만들기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/13.svg"/> | <a href="./../solution/greedy/2812">바로가기</a> |
 | ⬜️ | 26 | <a href="https://www.acmicpc.net/problem/8980" target="_blank">8980</a> | <a href="https://www.acmicpc.net/problem/8980" target="_blank">택배</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/14.svg"/> | |
+
+### 활동 선택 문제 (1)
+
+한 번에 가장 많은 활동을 할 수 있는 경우 고르기
+
+| index |  1  |  2  |  3  |  4  |  5  |
+| :---: | :-: | :-: | :-: | :-: | :-: |
+| start |  1  |  2  |  5  |  6  |  8  |
+|  end  |  3  |  4  |  7  |  9  |  9  |
+
+|  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|     |  2  |  2  |  2  |     |  4  |  4  |  4  |  4  |
+|  1  |  1  |  1  |     |  3  |  3  |  3  |  5  |  5  |
+
+-> 1, 3, 5가 가장 많은 활동하는 경우
+
+```javascript
+const sorted = input.sort(([s1, e1], [s2, e2]) =>
+  e1 !== e2 ? e1 - e2 : s1 - s2
+);
+
+let result = [];
+let lastTIme = 0;
+
+for (const [startTime, endTime] of sorted) {
+  if (lastTime <= startTime) {
+    lastTime = endTime;
+    result.push([startTime, endTime]);
+  }
+}
+```
+
+- 실버1 - 1931 - 회의실 배정
+
+### 활동 선택 문제 (2)
+
+모든 활동을 포함 하는 최소 그룹 개수
+
+```
+function run({ N, input }) {
+  const timeList = input
+    .flatMap(([s, e]) => [
+      ["s", s],
+      ["e", e],
+    ])
+    .sort(([type1, time1], [type2, time2]) =>
+      time1 !== time2 ? time1 - time2 : type2 - type1
+    )
+    .map(([s, _]) => s);
+  // console.log(timeList);
+
+  const maxCnt = timeList.reduce(
+    ([cnt, max], cur) => {
+      const curCnt = cnt + (cur === "s" ? 1 : -1);
+      return [curCnt, Math.max(max, curCnt)];
+    },
+    [0, 0]
+  );
+  console.log(maxCnt[1]);
+}
+
+```
+
+- 골드5 - 11000 - 강의실 배정
