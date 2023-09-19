@@ -20,7 +20,7 @@
 | ✅ | 13 | <a href="https://www.acmicpc.net/problem/21314" target="_blank">21314</a> | <a href="./21314.js" target="_blank">민겸 수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
 | ✅ | 14 | <a href="https://www.acmicpc.net/problem/1931" target="_blank">1931</a> | <a href="./1931.js" target="_blank">회의실 배정</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> |
 | ✅ | 15 | <a href="https://www.acmicpc.net/problem/11000" target="_blank">11000</a> | <a href="./11000.js" target="_blank">강의실 배정</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> |
-| ⬜️ | 16 | <a href="https://www.acmicpc.net/problem/13164" target="_blank">13164</a> | <a href="./13164.js" target="_blank">행복 유치원</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> |
+| ✅ | 16 | <a href="https://www.acmicpc.net/problem/13164" target="_blank">13164</a> | <a href="./13164.js" target="_blank">행복 유치원</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> |
 | ⬜️ | 17 | <a href="https://www.acmicpc.net/problem/19598" target="_blank">19598</a> | <a href="./19598.js" target="_blank">최소 회의실 개수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> |
 | ⬜️ | 18 | <a href="https://www.acmicpc.net/problem/2212" target="_blank">2212</a> | <a href="./2212.js" target="_blank">센서</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> |
 | ⬜️ | 19 | <a href="https://www.acmicpc.net/problem/1092" target="_blank">1092</a> | <a href="./1092.js" target="_blank">배</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> |
