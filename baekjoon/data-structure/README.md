@@ -44,7 +44,7 @@
 
 ---
 
-### 큐
+## 큐
 
 <details>
 <summary>설명</summary>
@@ -53,7 +53,7 @@
 
 ---
 
-### 스택
+## 스택
 
 <details>
 <summary>설명</summary>
@@ -62,7 +62,7 @@
 
 ---
 
-### 덱
+## 덱
 
 <details>
 <summary>설명</summary>
@@ -71,7 +71,7 @@
 
 ---
 
-### Map
+## Map
 
 <details>
 <summary>설명</summary>
@@ -80,7 +80,7 @@
 
 ---
 
-### Set
+## Set
 
 <details>
 <summary>설명</summary>
@@ -89,7 +89,7 @@
 
 ---
 
-### 우선순위 큐
+## 우선순위 큐
 
 <details>
 <summary>설명</summary>
@@ -98,10 +98,10 @@
 
 ---
 
-### 힙
+## 힙
 
 <details>
-<summary><b style="color: #0B60B2">최대힙 (Maximum Heap)</b></summary>
+<summary><h3 style="color: #0B60B2">최대힙 (Maximum Heap)</h3></summary>
 
 - 완전 이진 트리 구조
 - 부모 노드의 값이 자식 노드의 값보다 큼
@@ -115,7 +115,7 @@
   - (반복) 삽입한 값이 부모보다 큰 값을 가지는 경우 swap
 
 <details>
-<summary><b style="color: #888">최대힙 (Maximum Heap) 구현 코드</b></summary>
+<summary><span style="color: #888">최대힙 (Maximum Heap) 구현 코드</span></summary>
 
 ```javascript
 class Heap {
@@ -206,10 +206,11 @@ class Heap {
 </details>
 
 <details>
-<summary><b style="color: #0B60B2">최소힙 (Minimum Heap)</b></summary>
+<summary><h3 style="color: #0B60B2">최소힙 (Minimum Heap)</h3></summary>
 
-<details><summary><b style="color: #888">최대힙 (Maximum Heap) 구현 코드</b></summary>
-```
+<details><summary><span style="color: #888">최소힙 (Minimum Heap) 구현 코드</span></summary>
+
+```javascript
 class Heap {
   constructor() {
     this.list = [];
@@ -245,10 +246,9 @@ class Heap {
       curIdx = parentIdx;
       parentIdx = this.parentIndex(curIdx);
     }
-
-}
-pop() {
-if (this.size === 0) return 0;
+  }
+  pop() {
+    if (this.size === 0) return 0;
 
     this.swap(0, this.size - 1);
     const min = this.list.pop();
@@ -274,29 +274,27 @@ if (this.size === 0) return 0;
     }
 
     return min;
+  }
+  // print() {
+  // if (this.size === 0) {
+  // console.log("empty");
+  // return;
+  // }
 
+  // const copy = [...this.list];
+  // let cnt = 1;
+  // let idx = 0;
+
+  // while (idx < this.size) {
+  // copy[idx] = `${copy[idx]}\n`;
+  // cnt \*= 2;
+  // idx += cnt;
+  // }
+  // console.log(copy.join(" "));
+  // }
 }
-// print() {
-// if (this.size === 0) {
-// console.log("empty");
-// return;
-// }
-
-// const copy = [...this.list];
-// let cnt = 1;
-// let idx = 0;
-
-// while (idx < this.size) {
-// copy[idx] = `${copy[idx]}\n`;
-// cnt \*= 2;
-// idx += cnt;
-// }
-// console.log(copy.join(" "));
-// }
-}
-
 ```
 
 </details>
+
 </details>
-```
