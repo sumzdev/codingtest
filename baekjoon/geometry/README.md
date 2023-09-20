@@ -4,7 +4,7 @@
 | 완료 | 순번 | 문제 번호 | 문제 이름 | 난이도 | 설명 |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
 | ✅ | 00 | <a href="https://www.acmicpc.net/problem/2166" target="_blank">2166</a> | <a href="./2166.js" target="_blank">다각형의 면적</a> | 골드5 | 다각형의 면적을 구하는 문제 |
-| ⬜️ | 01 | <a href="https://www.acmicpc.net/problem/11758" target="_blank">11758</a> | <a href="./11758.js" target="_blank">CCW</a> | 골드5 | 세 점이 이루는 방향을 구하는 문제 |
+| ✅ | 01 | <a href="https://www.acmicpc.net/problem/11758" target="_blank">11758</a> | <a href="./11758.js" target="_blank">CCW</a> | 골드5 | 세 점이 이루는 방향을 구하는 문제 |
 | ⬜️ | 02 | <a href="https://www.acmicpc.net/problem/25308" target="_blank">25308</a> | <a href="./25308.js" target="_blank">방사형 그래프</a> | 골드4 | CCW 문제와 어떤 알고리즘을 조합해야 이 문제를 풀 수 있을까요? |
 | ⬜️ | 03 | <a href="https://www.acmicpc.net/problem/17386" target="_blank">17386</a> | <a href="./17386.js" target="_blank">선분 교차 1</a> | 골드3 | 두 선분의 교차를 판별하는 문제 |
 | ⬜️ | 04 | <a href="https://www.acmicpc.net/problem/1069" target="_blank">1069</a> | <a href="./1069.js" target="_blank">집으로</a> | 골드3 | |
