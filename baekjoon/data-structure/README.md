@@ -30,9 +30,9 @@
 [출처](https://github.com/tony9402/baekjoon/tree/main/data_structure2)
 | 완료 | 순번 | 문제 번호 | 문제 이름 | 난이도 |
 | :-----: | :-----: | :-----: | :-----: | :-----: |
-| ⬜️ | 00 | <a href="https://www.acmicpc.net/problem/1620" target="_blank">1620</a> | <a href="https://www.acmicpc.net/problem/1620" target="_blank">나는야 포켓몬 마스터 이다솜</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/7.svg"/> |
-| ⬜️ | 01 | <a href="https://www.acmicpc.net/problem/14425" target="_blank">14425</a> | <a href="https://www.acmicpc.net/problem/14425" target="_blank">문자열 집합</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> |
-| ⬜️ | 02 | <a href="https://www.acmicpc.net/problem/11279" target="_blank">11279</a> | <a href="https://www.acmicpc.net/problem/11279" target="_blank">최대 힙</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
+| ✅ | 00 | <a href="https://www.acmicpc.net/problem/1620" target="_blank">1620</a> | <a href="https://www.acmicpc.net/problem/1620" target="_blank">나는야 포켓몬 마스터 이다솜</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/7.svg"/> |
+| ✅ | 01 | <a href="https://www.acmicpc.net/problem/14425" target="_blank">14425</a> | <a href="https://www.acmicpc.net/problem/14425" target="_blank">문자열 집합</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> |
+| ✅ | 02 | <a href="https://www.acmicpc.net/problem/11279" target="_blank">11279</a> | <a href="https://www.acmicpc.net/problem/11279" target="_blank">최대 힙</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
 | ⬜️ | 03 | <a href="https://www.acmicpc.net/problem/2075" target="_blank">2075</a> | <a href="https://www.acmicpc.net/problem/2075" target="_blank">N번째 큰 수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
 | ⬜️ | 04 | <a href="https://www.acmicpc.net/problem/4358" target="_blank">4358</a> | <a href="https://www.acmicpc.net/problem/4358" target="_blank">생태학</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
 | ⬜️ | 05 | <a href="https://www.acmicpc.net/problem/11286" target="_blank">11286</a> | <a href="https://www.acmicpc.net/problem/11286" target="_blank">절댓값 힙</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> |
@@ -93,5 +93,113 @@
 
 <details>
 <summary>설명</summary>
+
+</details>
+
+---
+
+### 힙
+
+<details>
+<summary><b style="color: #0B60B2">최대힙 (Maximum Heap)</b></summary>
+
+- 완전 이진 트리 구조
+- 부모 노드의 값이 자식 노드의 값보다 큼
+- 삭제 : 루트 값 리턴
+
+  - 마지막 요소(현재값)을 루트로 가져오기
+  - (반복) 자식 중 현재값보다 큰 값을 가지는 자식이 있다면 swap
+
+- 삽입
+  - 마지막 자리에 노드 추가
+  - (반복) 삽입한 값이 부모보다 큰 값을 가지는 경우 swap
+
+<details><summary><b style="color: #888">최대힙 (Maximum Heap) 구현 코드</b></summary>
+
+```javascript
+class Heap {
+  constructor() {
+    this.list = [];
+  }
+  getParentIndex(index) {
+    return (index - 1) >> 1;
+  }
+  getLeftChildIndex(index) {
+    const idx = (index << 1) + 1;
+    return idx > this.size() ? -1 : idx;
+  }
+  getRightChildIndex(index) {
+    const idx = (index << 1) + 2;
+    return idx > this.size() ? -1 : idx;
+  }
+  size() {
+    return this.list.length;
+  }
+  swap(idx1, idx2) {
+    [this.list[idx1], this.list[idx2]] = [this.list[idx2], this.list[idx1]];
+  }
+  push(v) {
+    this.list.push(v);
+
+    let curIdx = this.list.length - 1;
+    let parentIdx = this.getParentIndex(curIdx);
+
+    while (parentIdx !== -1 && this.list[parentIdx] < this.list[curIdx]) {
+      this.swap(parentIdx, curIdx);
+      curIdx = parentIdx;
+      parentIdx = this.getParentIndex(curIdx);
+    }
+  }
+  pop() {
+    if (this.size() === 0) return 0;
+
+    this.swap(0, this.size() - 1);
+    const max = this.list.pop();
+
+    let curIdx = 0;
+    let leftIdx = this.getLeftChildIndex(curIdx);
+    let rightIdx = this.getRightChildIndex(curIdx);
+
+    // undefined > undefined는 false
+    // 따라서 pop한 결과가 빈 배열이어도 아래 while문 조건은 false
+    while (
+      this.list[leftIdx] > this.list[curIdx] ||
+      this.list[rightIdx] > this.list[curIdx]
+      // 적어도 leftIdx는 -1이 아님
+      // =(적어도 list[leftIdx]는 undefined가 아님)
+    ) {
+      const indexToSwap =
+        this.list[leftIdx] < this.list[rightIdx] ? rightIdx : leftIdx;
+      // undefined > number : 항상 false
+      this.swap(indexToSwap, curIdx);
+
+      curIdx = indexToSwap;
+      leftIdx = this.getLeftChildIndex(curIdx);
+      rightIdx = this.getRightChildIndex(curIdx);
+    }
+
+    return max;
+  }
+  print() {
+    if (this.size() === 0) {
+      console.log("empty");
+      return;
+    }
+
+    const copy = [...this.list];
+    let cnt = 1;
+    let idx = 0;
+
+    while (idx < this.size()) {
+      copy[idx] = `${copy[idx]}\n`;
+      cnt *= 2;
+      idx += cnt;
+    }
+    console.log(copy.join(" "));
+  }
+}
+```
+
+</details>
 
 </details>
