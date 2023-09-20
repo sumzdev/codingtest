@@ -33,7 +33,7 @@
 | ✅ | 00 | <a href="https://www.acmicpc.net/problem/1620" target="_blank">1620</a> | <a href="https://www.acmicpc.net/problem/1620" target="_blank">나는야 포켓몬 마스터 이다솜</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/7.svg"/> |
 | ✅ | 01 | <a href="https://www.acmicpc.net/problem/14425" target="_blank">14425</a> | <a href="https://www.acmicpc.net/problem/14425" target="_blank">문자열 집합</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> |
 | ✅ | 02 | <a href="https://www.acmicpc.net/problem/11279" target="_blank">11279</a> | <a href="https://www.acmicpc.net/problem/11279" target="_blank">최대 힙</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
-| ⬜️ | 03 | <a href="https://www.acmicpc.net/problem/2075" target="_blank">2075</a> | <a href="https://www.acmicpc.net/problem/2075" target="_blank">N번째 큰 수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
+| ✅ | 03 | <a href="https://www.acmicpc.net/problem/2075" target="_blank">2075</a> | <a href="https://www.acmicpc.net/problem/2075" target="_blank">N번째 큰 수</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
 | ⬜️ | 04 | <a href="https://www.acmicpc.net/problem/4358" target="_blank">4358</a> | <a href="https://www.acmicpc.net/problem/4358" target="_blank">생태학</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
 | ⬜️ | 05 | <a href="https://www.acmicpc.net/problem/11286" target="_blank">11286</a> | <a href="https://www.acmicpc.net/problem/11286" target="_blank">절댓값 힙</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> |
 | ⬜️ | 06 | <a href="https://www.acmicpc.net/problem/7662" target="_blank">7662</a> | <a href="https://www.acmicpc.net/problem/7662" target="_blank">이중 우선순위 큐</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/12.svg"/> |
@@ -114,7 +114,8 @@
   - 마지막 자리에 노드 추가
   - (반복) 삽입한 값이 부모보다 큰 값을 가지는 경우 swap
 
-<details><summary><b style="color: #888">최대힙 (Maximum Heap) 구현 코드</b></summary>
+<details>
+<summary><b style="color: #888">최대힙 (Maximum Heap) 구현 코드</b></summary>
 
 ```javascript
 class Heap {
@@ -203,3 +204,99 @@ class Heap {
 </details>
 
 </details>
+
+<details>
+<summary><b style="color: #0B60B2">최소힙 (Minimum Heap)</b></summary>
+
+<details><summary><b style="color: #888">최대힙 (Maximum Heap) 구현 코드</b></summary>
+```
+class Heap {
+  constructor() {
+    this.list = [];
+  }
+  swap(idx1, idx2) {
+    let tmp = this.list[idx1];
+    this.list[idx1] = this.list[idx2];
+    this.list[idx2] = tmp;
+    // 메모리 초과
+    // [this.list[idx1], this.list[idx2]] = [this.list[idx2], this.list[idx1]];
+  }
+  parentIndex(index) {
+    return (index - 1) >> 1;
+  }
+  leftChildIndex(index) {
+    const idx = (index << 1) + 1;
+    return idx >= this.size ? -1 : idx;
+  }
+  rightChildIndex(index) {
+    const idx = (index << 1) + 2;
+    return idx >= this.size ? -1 : idx;
+  }
+  get size() {
+    return this.list.length;
+  }
+  push(v) {
+    this.list.push(v);
+
+    let curIdx = this.size - 1;
+    let parentIdx = this.parentIndex(curIdx);
+    while (parentIdx !== -1 && this.list[parentIdx] > this.list[curIdx]) {
+      this.swap(curIdx, parentIdx);
+      curIdx = parentIdx;
+      parentIdx = this.parentIndex(curIdx);
+    }
+
+}
+pop() {
+if (this.size === 0) return 0;
+
+    this.swap(0, this.size - 1);
+    const min = this.list.pop();
+
+    let curIdx = 0;
+    let leftIdx = this.leftChildIndex(curIdx);
+    let rightIdx = this.rightChildIndex(curIdx);
+
+    while (
+      leftIdx !== -1 &&
+      (this.list[leftIdx] < this.list[curIdx] ||
+        this.list[rightIdx] < this.list[curIdx])
+    ) {
+      const indexToChange =
+        rightIdx !== -1 && this.list[rightIdx] < this.list[leftIdx]
+          ? rightIdx
+          : leftIdx;
+
+      this.swap(curIdx, indexToChange);
+      curIdx = indexToChange;
+      leftIdx = this.leftChildIndex(curIdx);
+      rightIdx = this.rightChildIndex(curIdx);
+    }
+
+    return min;
+
+}
+// print() {
+// if (this.size === 0) {
+// console.log("empty");
+// return;
+// }
+
+// const copy = [...this.list];
+// let cnt = 1;
+// let idx = 0;
+
+// while (idx < this.size) {
+// copy[idx] = `${copy[idx]}\n`;
+// cnt \*= 2;
+// idx += cnt;
+// }
+// console.log(copy.join(" "));
+// }
+}
+
+```
+
+</details>
+</details>
+```
