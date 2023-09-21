@@ -5,12 +5,12 @@
 
 <h2>정리</h2>
 
-- <a href="./note/stack.md">스택 (Stack)</a>
-- <a href="./note/queue.md">큐 (Queue)</a>
-- <a href="./note/priority.md-queue">우선순위 큐 (Priority Queue)</a>
-- <a href="./note/deque.md">덱 (Deque)</a>
-- <a href="./note/map_set.md">Map과 Set</a>
-- <a href="./note/heap.md">Heap</a>
+- <a href="./stack_queue_deque.md#stack">스택 (Stack)</a>
+- <a href="./stack_queue_deque.md#queue">큐 (Queue)</a>
+- <a href="./stack_queue_deque.md#priority-queue">우선순위 큐 (Priority Queue)</a>
+- <a href="./deque.md">덱 (Deque)</a>
+- <a href="./map_set.md">Map과 Set</a>
+- <a href="./heap.md">힙 (Heap)</a>
 
 ## 큐, 스택, 덱
 

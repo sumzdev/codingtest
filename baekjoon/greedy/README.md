@@ -1,5 +1,7 @@
 # Greedy (그리디)
 
+- <a href="./greedy1.md">활동 선택 문제</a>
+
 [출처](https://github.com/tony9402/baekjoon/tree/main/greedy) /
 [백준 문제집](https://www.acmicpc.net/workbook/view/7645)
 | 완료 | 순번 | 문제 번호 | 문제 이름 | 난이도 |
