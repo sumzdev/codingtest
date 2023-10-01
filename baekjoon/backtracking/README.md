@@ -1,4 +1,4 @@
-# 자료구조
+# 백트래킹
 
 [출처](https://github.com/tony9402/baekjoon) /
 [백준 문제집](https://www.acmicpc.net/workbook/view/7645)
