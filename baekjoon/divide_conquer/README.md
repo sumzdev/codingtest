@@ -7,8 +7,8 @@
 [출처](https://github.com/tony9402/baekjoon/tree/main/divide_and_conquer) / [백준 문제집](https://www.acmicpc.net/workbook/view/7276)
 | 완료 | 순번 | 추천 문제 | 문제 번호(문제 링크) | 문제 이름 (풀이 링크) | 난이도 |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| ⬜️ | 00 | :heavy_check_mark: | <a href="https://www.acmicpc.net/problem/2630" target="_blank">2630</a> | <a href="./solution/2630.js" target="_blank">색종이 만들기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
-| ⬜️ | 01 | :heavy_check_mark: | <a href="https://www.acmicpc.net/problem/17829" target="_blank">17829</a> | <a href="./solution/17829.js" target="_blank">222-풀링</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
+| ✅ | 00 | :heavy_check_mark: | <a href="https://www.acmicpc.net/problem/2630" target="_blank">2630</a> | <a href="./solution/2630.js" target="_blank">색종이 만들기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
+| ✅ | 01 | :heavy_check_mark: | <a href="https://www.acmicpc.net/problem/17829" target="_blank">17829</a> | <a href="./solution/17829.js" target="_blank">222-풀링</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
 | ⬜️ | 02 | :heavy_check_mark: | <a href="https://www.acmicpc.net/problem/18222" target="_blank">18222</a> | <a href="./solution/18222.js" target="_blank">투에-모스 문자열</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> |
 | ⬜️ | 03 | :heavy_check_mark: | <a href="https://www.acmicpc.net/problem/1992" target="_blank">1992</a> | <a href="./solution/1992.js" target="_blank">쿼드트리</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> |
 | ⬜️ | 04 | :heavy_check_mark: | <a href="https://www.acmicpc.net/problem/1074" target="_blank">1074</a> | <a href="./solution/1074.js" target="_blank">Z</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> |
