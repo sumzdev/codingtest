@@ -5,7 +5,7 @@
 
 <h2>정리</h2>
 
-- <a href="./">문제 유형</a>
+- <a href="./binary_search.md">Binary Search</a>
   [출처](https://github.com/tony9402/baekjoon/tree/main/binary_search)
   | 완료 | 순번 | 추천문제 | 문제 번호 | 문제 이름 | 난이도 | 태그 |
   | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
