@@ -10,7 +10,7 @@
   | 완료 | 순번 | 추천문제 | 문제 번호 | 문제 이름 | 난이도 | 태그 |
   | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
   | ✅ | 00 |v| <a href="https://www.acmicpc.net/problem/1789" target="_blank">1789</a> | <a href="../solution/1789.js" target="_blank">수들의 합</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/6.svg"/> | 수학, 그리디 알고리즘 |
-  | ⬜️ | 01 |v| <a href="https://www.acmicpc.net/problem/10815" target="_blank">10815</a> | <a href="../solution/10815.js" target="_blank">숫자 카드</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/6.svg"/> | |
+  | ✅ | 01 |v| <a href="https://www.acmicpc.net/problem/10815" target="_blank">10815</a> | <a href="../solution/10815.js" target="_blank">숫자 카드</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/6.svg"/> | 해시를 사용한 집합과 맵 |
   | ⬜️ | 02 |v| <a href="https://www.acmicpc.net/problem/2417" target="_blank">2417</a> | <a href="../solution/2417.js" target="_blank">정수 제곱근</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/7.svg"/> | |
   | ⬜️ | 03 |v| <a href="https://www.acmicpc.net/problem/2512" target="_blank">2512</a> | <a href="../solution/2512.js" target="_blank">예산</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> | |
   | ⬜️ | 04 |v| <a href="https://www.acmicpc.net/problem/19637" target="_blank">19637</a> | <a href="../solution/19637.js" target="_blank">IF문 좀 대신 써줘</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> | |
