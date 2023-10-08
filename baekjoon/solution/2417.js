@@ -7,28 +7,22 @@
 // ---------------------------------------
 const fs = require("fs");
 // ---------------------------------------
-const binarySearchFunc = (startNum, endNum, target, prev) => {
+const binarySearchFunc = (startNum, endNum, target) => {
   // 배열에 해당 값이 존재하지 않는 경우
-  if (startNum > endNum) {
-    return `${startNum}`;
-  }
+  if (startNum > endNum) return `${startNum}`;
 
   // 중간 값 구하기
   const midNum = (startNum + endNum) >> 1n;
   const squareNum = midNum ** 2n;
 
   // 찾은 경우
-  if (squareNum === target) {
-    return `${midNum}`;
-  }
+  if (squareNum === target) return `${midNum}`;
 
   // 중간 값 보다 큰 경우
-  if (squareNum < target) {
-    return binarySearchFunc(midNum + 1n, endNum, target, 1);
-  }
+  if (squareNum < target) return binarySearchFunc(midNum + 1n, endNum, target);
 
   // 중간 값 보다 작은 경우
-  return binarySearchFunc(startNum, midNum - 1n, target, -1);
+  return binarySearchFunc(startNum, midNum - 1n, target);
 };
 // ---------------------------------------
 const isTest = process.platform !== "linux";
