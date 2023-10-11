@@ -10,7 +10,7 @@
 <h2>문제 목록</h2>
 
 [출처](https://github.com/tony9402/baekjoon/tree/main/binary_search)
-| 완료 | 순번 | 추천문제 | 문제 번호 | 문제 이름 | 난이도 | 태그 |
+| 완료 | 순번 | 추천 | 문제 번호 | 문제 이름 | 난이도 | 태그 |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
 | ✅ | 00 |v| <a href="https://www.acmicpc.net/problem/1789" target="_blank">1789</a> | <a href="../solution/1789.js" target="_blank">수들의 합</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/6.svg"/> | 수학, 그리디 알고리즘 |
 | ✅ | 01 |v| <a href="https://www.acmicpc.net/problem/10815" target="_blank">10815</a> | <a href="../solution/10815.js" target="_blank">숫자 카드</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/6.svg"/> | 해시를 사용한 집합과 맵 |
