@@ -11,7 +11,7 @@
 [출처](https://github.com/tony9402/baekjoon/tree/main/two_pointer)
 | 완료 | 순번 | 추천 | 문제 번호 | 문제 이름 | 난이도 | 태그 |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| ⬜️ | 00 |v| <a href="https://www.acmicpc.net/problem/11728" target="_blank">11728</a> | <a href="../solution/11728.js" target="_blank">배열 합치기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/6.svg"/> | |
+| ✅ | 00 |v| <a href="https://www.acmicpc.net/problem/11728" target="_blank">11728</a> | <a href="../solution/11728.js" target="_blank">배열 합치기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/6.svg"/> | |
 | ⬜️ | 01 |v| <a href="https://www.acmicpc.net/problem/21921" target="_blank">21921</a> | <a href="../solution/21921.js" target="_blank">블로그</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/8.svg"/> | |
 | ⬜️ | 02 |v| <a href="https://www.acmicpc.net/problem/20922" target="_blank">20922</a> | <a href="../solution/20922.js" target="_blank">겹치는 건 싫어</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> | |
 | ⬜️ | 03 |v| <a href="https://www.acmicpc.net/problem/2470" target="_blank">2470</a> | <a href="../solution/2470.js" target="_blank">두 용액</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | |
