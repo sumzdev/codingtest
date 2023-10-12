@@ -1,36 +1,43 @@
 // https://www.acmicpc.net/problem/1874
 // 스택 수열
+// 실버 2
+// 자료구조, 스택
+// 231012
 
+// ---------------------------------------
 const fs = require("fs");
-const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+// ---------------------------------------
+function makeArrayByStack(array) {
+  let stackOperators = "";
 
-// string array
-let lineInput = fs.readFileSync(filePath).toString().trim().split("\n");
-let [, ...nums] = lineInput;
+  const stack = [];
+  let number = 1;
 
-let result = [];
-let snum = 1;
-let stack = [];
-let num;
-
-while (nums.length > 0) {
-  num = nums.shift();
-
-  if (stack.at(-1) == num) {
-    stack.pop();
-    result.push("-");
-    continue;
+  for (let cursor = 0; cursor < array.length; cursor += 1) {
+    while (stack.length === 0 || stack.at(-1) < array[cursor]) {
+      stack.push(number++);
+      stackOperators += "+\n";
+    }
+    let poppedValue = stack.pop();
+    if (poppedValue !== array[cursor]) return "NO";
+    stackOperators += "-\n";
   }
-  while (stack.length == 0 || stack.at(-1) < num) {
-    stack.push(snum++);
-    result.push("+");
-  }
-  result.push("-");
-  stack.pop();
+
+  return stackOperators;
 }
+// ---------------------------------------
+const isTest = process.platform !== "linux";
+const inputFilePaths = !isTest
+  ? ["/dev/stdin"]
+  : [
+      "./input1.txt", //
+      // "./input2.txt", //
+      // "./input3.txt", //
+    ];
 
-if (stack.at(-1) < num) {
-  console.log("NO");
-} else {
-  console.log(result.join("\n"));
+for (let filePath of inputFilePaths) {
+  if (isTest) console.log("==============", filePath);
+  const inputString = fs.readFileSync(filePath).toString();
+  const [N, ...array] = inputString.trim().split("\n");
+  console.log(makeArrayByStack(array.map(Number)).trim());
 }
