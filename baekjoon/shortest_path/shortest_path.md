@@ -1,10 +1,59 @@
 <h1>최단거리(Shortest Path) 구하기</h1>
 
+<h2 id="bfs">BFS</h2>
+- 가중치가 없는 그래프에서 최단거리 구하기
+
+- 특정 노드의 다른 노드들 간의 최단거리 구하기
+
+  ```javascript
+  /**
+   * 특정 노드의 다른 노드들 간의 최단거리 구하기
+   * 각 노드는 1~N
+   *
+   * @param {number} N 노드 수
+   * @param {number} startNode 시작 노드
+   * @param {[number, number][]} edgeList 간선 정보 (가중치 x, 단방향)
+   * @returns 시작 노드의 다른 노드들 간의 최단거리 목록
+   */
+  function findShortestDistanceBFS(N, startNode, edgeList) {
+    console.log(N, startNode, edgeList);
+
+    // 노드 별 인접한 노드 정보 그래프 구성
+    const graph = Array.from({ length: N + 1 }).map((v) => []);
+    edgeList.forEach(([from, to]) => graph[from].push(to));
+    // console.log(graph);
+
+    const distanceList = Array.from({ length: N + 1 }).fill(-1);
+
+    // BFS
+    const queue = [startNode];
+    distanceList[startNode] = 0;
+
+    while (queue.length > 0) {
+      const curNode = queue.shift();
+      graph[curNode].forEach((nextNode) => {
+        if (distanceList[nextNode] === -1) {
+          queue.push(nextNode);
+          distanceList[nextNode] = distanceList[curNode] + 1;
+        }
+      });
+    }
+    return distanceList.slice(1);
+  }
+  ```
+
 <h2 id="dijkstra">다익스트라(Dijkstra) 알고리즘</h2>
 
 - 특정 노드에서 다른 노드들 간의 최단거리 구하기
 - 그리디 알고리즘 : 가장 적은 비용 노드를 선택하여 임의 과정 반복
-- `TODO`
+
+1.
+
+```javascript
+
+```
+
+1. `TODO`
 
 ```javascript
 
