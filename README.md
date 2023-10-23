@@ -11,3 +11,4 @@
 - [Divide and Conquer](https://github.com/sumzdev/codingtest/tree/main/baekjoon/divide_conquer)
 - [String](https://github.com/sumzdev/codingtest/tree/main/baekjoon/string)
 - [Geometry](https://github.com/sumzdev/codingtest/tree/main/baekjoon/geometry)
+- [Shortest Path(최단 거리)](https://github.com/sumzdev/codingtest/tree/main/baekjoon/shortest_path)
