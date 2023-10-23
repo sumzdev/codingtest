@@ -14,7 +14,7 @@
 [출처](https://github.com/tony9402/baekjoon/tree/main/shortest_path)
 | 완료 | 순번 | 추천 문제 | 문제 번호(문제 링크) | 문제 이름 (풀이 링크) | 난이도 | 태그 |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| ✅ | 00 |v| <a href="https://www.acmicpc.net/problem/18352" target="_blank">18352</a> | <a href="../solution/18352.js" target="_blank">특정 거리의 도시 찾기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> | |
+| ✅ | 00 |v| <a href="https://www.acmicpc.net/problem/18352" target="_blank">18352</a> | <a href="../solution/18352.js" target="_blank">특정 거리의 도시 찾기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/9.svg"/> | BFS |
 | ⬜️ | 01 |v| <a href="https://www.acmicpc.net/problem/11403" target="_blank">11403</a> | <a href="../solution/11403.js" target="_blank">경로 찾기</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/10.svg"/> | |
 | ⬜️ | 02 |v| <a href="https://www.acmicpc.net/problem/13549" target="_blank">13549</a> | <a href="../solution/13549.js" target="_blank">숨바꼭질 3</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | |
 | ⬜️ | 03 |v| <a href="https://www.acmicpc.net/problem/11265" target="_blank">11265</a> | <a href="../solution/11265.js" target="_blank">끝나지 않는 파티</a> | <img height="25px" width="25px" src="https://static.solved.ac/tier_small/11.svg"/> | |
