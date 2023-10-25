@@ -11,6 +11,11 @@
 //  - 메모리 : 64668 KB
 //  - 시간 : 668 ms
 
+// 더 좋은 답안 : https://www.acmicpc.net/source/65711002
+// - 시간 : 260ms
+// - 우선순위 큐 사용하지 않고, 이중 for문으로 minDistance 계산하여 사용
+// - min 구하면서, distance 계산해서 사용
+
 // ---------------------------------------
 // max javascript Array length : 2^32 - 1 : 4294967295
 
