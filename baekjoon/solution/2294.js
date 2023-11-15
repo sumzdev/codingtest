@@ -14,20 +14,13 @@
 
 // ---------------------------------------
 function findSumMinCoin(targetSum, coinList) {
-  // coinList = coinList.sort((a, b) => a - b);
+  coinList = coinList.sort((a, b) => a - b); // 정렬 하는 것이 훨씬 빠름
+
   const IMPOSSIBLE = 10001;
 
   const dp = Array(targetSum + 1).fill(IMPOSSIBLE);
   dp[0] = 0;
   // console.log(dp.map((_, i) => `${i}`.padStart(2, " ")).join(" "));
-
-  const [coin] = coinList.splice(0, 1);
-  for (let idx = 1; idx * coin <= targetSum; idx += 1) {
-    dp[idx * coin] = idx;
-  }
-  // console.log(
-  //   dp.map((v) => `${v === IMPOSSIBLE ? "X" : v}`.padStart(2, " ")).join(" ")
-  // );
 
   for (const coin of coinList) {
     dp[coin] = 1;
